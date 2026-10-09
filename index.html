@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lucas Lemarechal — Portfolio BTS SIO SISR</title>
+<meta name="description" content="Portfolio de Lucas Lemarechal, étudiant en 2e année de BTS SIO option SISR. Réseau, systèmes, cybersécurité, virtualisation et veille technologique.">
+<meta name="author" content="Lucas Lemarechal">
+<meta name="theme-color" content="#0A0C10">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lucas Lemarechal — Portfolio BTS SIO SISR">
+<meta property="og:description" content="Étudiant en 2e année de BTS SIO option SISR. Réseau, systèmes, cybersécurité, virtualisation.">
+<meta property="og:locale" content="fr_FR">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script>
+  // Applique le thème avant le premier rendu pour éviter le flash.
+  (function () {
+    try {
+      var stored = localStorage.getItem('ll-theme');
+      var sys = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', stored || sys);
+    } catch (e) { /* stockage indisponible : on garde le thème par défaut */ }
+  })();
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#accueil">Aller au contenu principal</a>
+<div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<!-- ===================== NAVIGATION ===================== -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="#accueil" aria-label="Accueil — Lucas Lemarechal">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="32" height="32">
+          <rect x="1" y="1" width="30" height="30" rx="7" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".35"/>
+          <circle cx="10" cy="10" r="2.6" fill="currentColor"/>
+          <circle cx="22" cy="10" r="2.6" fill="currentColor" opacity=".55"/>
+          <circle cx="16" cy="22" r="2.6" fill="currentColor"/>
+          <path d="M10 10h12M10 10l6 12M22 10l-6 12" stroke="currentColor" stroke-width="1.3" opacity=".5" fill="none"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <strong>Lucas Lemarechal</strong>
+        <small>BTS SIO · SISR</small>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Ouvrir le menu">
+      <span></span><span></span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Navigation principale">
+      <ul>
+        <li><a href="#profil"><span class="nav-num">01</span>Profil</a></li>
+        <li><a href="#competences"><span class="nav-num">02</span>Compétences</a></li>
+        <li><a href="#stage"><span class="nav-num">03</span>Stage I2BC</a></li>
+        <li><a href="#labo"><span class="nav-num">04</span>Home lab</a></li>
+        <li><a href="#veille"><span class="nav-num">05</span>Veille</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème" title="Changer de thème">
+      <svg class="ico-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round">
+        <circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.2 5.2l1.6 1.6M17.2 17.2l1.6 1.6M18.8 5.2l-1.6 1.6M6.8 17.2l-1.6 1.6"/>
+      </svg>
+      <svg class="ico-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 14.2A8.4 8.4 0 1 1 9.8 4a6.9 6.9 0 0 0 10.2 10.2Z"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="accueil">
+    <div class="hero-bg" aria-hidden="true">
+      <svg class="hero-net" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+            <path d="M48 0H0V48" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+          </pattern>
+          <linearGradient id="traceFade" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="currentColor" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="currentColor" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <rect width="1200" height="700" fill="url(#grid)" class="hero-grid"/>
+        <g class="hero-traces">
+          <path d="M120 560H420V300H700V120H1080" class="trace"/>
+          <path d="M120 560V180H360V60" class="trace"/>
+          <path d="M420 300V620H900V420H1080" class="trace"/>
+          <path d="M700 300H980V560H1080" class="trace"/>
+          <path d="M120 560V700" class="trace"/>
+        </g>
+        <g class="hero-nodes">
+          <rect x="414" y="294" width="12" height="12" rx="2"/>
+          <rect x="694" y="114" width="12" height="12" rx="2"/>
+          <rect x="894" y="414" width="12" height="12" rx="2"/>
+          <rect x="354" y="54" width="12" height="12" rx="2"/>
+          <rect x="974" y="554" width="12" height="12" rx="2"/>
+          <rect x="114" y="554" width="12" height="12" rx="2"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow" data-reveal>
+          <span class="dot-live" aria-hidden="true"></span>
+          Disponible pour un stage · Île-de-France
+        </p>
+
+        <h1 data-reveal style="--i:1">
+          <span class="h1-line">Lucas</span>
+          <span class="h1-line">Lemarechal</span>
+        </h1>
+
+        <p class="hero-role" data-reveal style="--i:2">
+          Étudiant en <strong>2<sup>e</sup> année de BTS SIO</strong>, option <strong>SISR</strong>.
+          Je conçois, déploie et documente des infrastructures réseau et systèmes.
+        </p>
+
+        <p class="hero-pitch" data-reveal style="--i:3">
+          Passionné de réseau, de systèmes, de cybersécurité et d'émulation. Ce portfolio
+          rassemble un stage de terrain, un home lab monté de bout en bout, et une veille
+          technologique que je maintiens en continu.
+        </p>
+
+        <div class="hero-cta" data-reveal style="--i:4">
+          <a class="btn btn-primary" href="#stage">
+            Voir le projet I2BC
+            <svg viewBox="0 0 20 20" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#veille">Ouvrir la veille</a>
+        </div>
+
+        <dl class="hero-stats" data-reveal style="--i:5">
+          <div>
+            <dt>Stage</dt>
+            <dd><span class="count" data-count="1">0</span> mois à l'I2BC</dd>
+          </div>
+          <div>
+            <dt>Domaine</dt>
+            <dd>Windows Server <span class="sep">/</span> VMware ESXi</dd>
+          </div>
+          <div>
+            <dt>Labo</dt>
+            <dd><span class="count" data-count="3">0</span> hyperviseurs</dd>
+          </div>
+        </dl>
+      </div>
+
+      <aside class="hero-terminal" data-reveal style="--i:3" aria-label="Présentation en terminal">
+        <div class="term-bar">
+          <span class="term-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="term-title">lucas@homelab — zsh</span>
+        </div>
+        <pre class="term-body"><code><span class="t-prompt">lucas@homelab</span><span class="t-punc">:</span><span class="t-path">~</span><span class="t-punc">$</span> whoami
+<span class="t-out">Lucas Lemarechal</span>
+<span class="t-out">Étudiant BTS SIO · option SISR</span>
+
+<span class="t-prompt">lucas@homelab</span><span class="t-punc">:</span><span class="t-path">~</span><span class="t-punc">$</span> cat /etc/domaines
+<span class="t-key">réseau</span> <span class="t-dim">·</span> <span class="t-key">systèmes</span> <span class="t-dim">·</span> <span class="t-key">cybersécurité</span> <span class="t-dim">·</span> <span class="t-key">émulation</span>
+
+<span class="t-prompt">lucas@homelab</span><span class="t-punc">:</span><span class="t-path">~</span><span class="t-punc">$</span> tree ~/labo<span class="t-caret"></span></code></pre>
+        <ul class="term-tree" id="termTree" aria-hidden="true">
+          <li style="--i:0"><span class="t-dim">├── </span>virtualbox<span class="t-dim">/</span></li>
+          <li style="--i:1"><span class="t-dim">├── </span>linux<span class="t-dim">/</span></li>
+          <li style="--i:2"><span class="t-dim">├── </span>windows-server<span class="t-dim">/</span></li>
+          <li style="--i:3"><span class="t-dim">└── </span>proxmox<span class="t-dim">/</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="hero-fade" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===================== 01 · PROFIL ===================== -->
+  <section class="section" id="profil">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="section-num"><span>01</span> Profil</p>
+        <h2>Parcours &amp; centres d'intérêt</h2>
+        <p class="section-lead">
+          Un cursus qui a bifurqué deux fois avant de trouver son terrain : l'infrastructure.
+          Chaque étape a laissé une compétence utile derrière elle.
+        </p>
+      </header>
+
+      <div class="profil-grid">
+        <div class="parcours" data-reveal>
+          <h3 class="block-title">Parcours académique</h3>
+          <ol class="timeline">
+            <li>
+              <span class="tl-marker" aria-hidden="true"></span>
+              <p class="tl-period">Semestre 1</p>
+              <h4>BUT Informatique</h4>
+              <p>Premier contact avec l'algorithmique, les bases de données et la programmation. Une assise technique large, avant la spécialisation.</p>
+            </li>
+            <li>
+              <span class="tl-marker" aria-hidden="true"></span>
+              <p class="tl-period">Semestre 2</p>
+              <h4>DUCES — IUT d'Orsay</h4>
+              <p>Année de remise à niveau scientifique et méthodologique. Rigueur de travail, autonomie, et confirmation du goût pour les systèmes.</p>
+            </li>
+            <li class="is-current">
+              <span class="tl-marker" aria-hidden="true"></span>
+              <p class="tl-period">En cours — 2<sup>e</sup> année</p>
+              <h4>BTS SIO, option SISR</h4>
+              <p>Lycée Parc de Vilgénis. Cœur de cible : administration des systèmes et des réseaux, supervision, sécurité, virtualisation.</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="profil-side">
+          <div class="card" data-reveal>
+            <h3 class="block-title">Centres d'intérêt</h3>
+            <ul class="chips">
+              <li>Réseau</li>
+              <li>Systèmes</li>
+              <li>Cybersécurité</li>
+              <li>Émulation</li>
+              <li>Virtualisation</li>
+              <li>Auto-hébergement</li>
+            </ul>
+            <p class="card-note">
+              L'émulation m'a appris la même leçon que le réseau : comprendre un système
+              en le reconstruisant pièce par pièce, puis en observant où il casse.
+            </p>
+          </div>
+
+          <div class="card card-accent" data-reveal style="--i:1">
+            <h3 class="block-title">Ce que je cherche</h3>
+            <ul class="focus-list">
+              <li><span aria-hidden="true">→</span> Un stage ou une alternance en administration systèmes &amp; réseaux</li>
+              <li><span aria-hidden="true">→</span> Des environnements avec de la vraie infrastructure à toucher</li>
+              <li><span aria-hidden="true">→</span> Une équipe qui documente ce qu'elle fait</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 02 · COMPÉTENCES ===================== -->
+  <section class="section section-alt" id="competences">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="section-num"><span>02</span> Compétences</p>
+        <h2>Cinq compétences, un seul fil rouge</h2>
+        <p class="section-lead">
+          Chaque compétence a été acquise en la mettant en œuvre, pas en la récitant.
+          La dernière n'est pas une compétence isolée : c'est la somme des quatre autres.
+        </p>
+      </header>
+
+      <ol class="skills">
+        <li class="skill" data-reveal>
+          <p class="skill-num">01</p>
+          <h3>Réseau</h3>
+          <p>Adressage IP, découpage en sous-réseaux, routage statique et lecture du modèle OSI comme grille d'analyse des pannes.</p>
+          <ul class="skill-tags"><li>Adressage IP</li><li>VLSM</li><li>Routage statique</li><li>Modèle OSI</li></ul>
+        </li>
+        <li class="skill" data-reveal style="--i:1">
+          <p class="skill-num">02</p>
+          <h3>Virtualisation</h3>
+          <p>Installation et configuration d'un hyperviseur VMware, création des machines virtuelles et allocation des ressources.</p>
+          <ul class="skill-tags"><li>VMware ESXi</li><li>Machines virtuelles</li><li>Stockage</li><li>Réseau virtuel</li></ul>
+        </li>
+        <li class="skill" data-reveal style="--i:2">
+          <p class="skill-num">03</p>
+          <h3>Windows Server</h3>
+          <p>Mise en place d'un contrôleur de domaine et de tout ce qui rend un parc exploitable au quotidien.</p>
+          <ul class="skill-tags"><li>Active Directory</li><li>GPO</li><li>DHCP</li><li>DNS</li></ul>
+        </li>
+        <li class="skill" data-reveal style="--i:3">
+          <p class="skill-num">04</p>
+          <h3>Transversal</h3>
+          <p>Autonomie et méthode : tester chaque étape avant de passer à la suivante, plutôt que de tout empiler et de chercher la panne après coup.</p>
+          <ul class="skill-tags"><li>Autonomie</li><li>Méthode</li><li>Tests unitaires par étape</li><li>Documentation</li></ul>
+        </li>
+        <li class="skill skill-wide" data-reveal style="--i:4">
+          <p class="skill-num">05</p>
+          <h3>Mise en œuvre d'une infrastructure complète, de bout en bout</h3>
+          <p>Du câble au compte utilisateur : concevoir l'adressage, router, virtualiser, installer les services, puis migrer le parc. La compétence qui prouve que les quatre précédentes tiennent ensemble.</p>
+          <ul class="skill-tags"><li>Conception</li><li>Déploiement</li><li>Migration de parc</li><li>Recette</li></ul>
+        </li>
+      </ol>
+
+      <!-- Schéma interactif OSI ↔ TCP/IP -->
+      <div class="osi-block" data-reveal>
+        <div class="osi-head">
+          <div>
+            <h3 class="block-title">Modèle OSI et modèle TCP/IP</h3>
+            <p class="osi-help">Survolez une couche d'un modèle pour voir sa correspondance dans l'autre.</p>
+          </div>
+          <div class="osi-legend">
+            <span class="lg lg-osi">OSI — 7 couches</span>
+            <span class="lg lg-tcp">TCP/IP — 4 couches</span>
+          </div>
+        </div>
+
+        <div class="osi-models" id="osiModels">
+          <ol class="osi-col" aria-label="Modèle OSI, 7 couches">
+            <li class="layer osi" data-group="application"><span class="lyr-num">7</span><span class="lyr-name">Application</span></li>
+            <li class="layer osi" data-group="application"><span class="lyr-num">6</span><span class="lyr-name">Présentation</span></li>
+            <li class="layer osi" data-group="application"><span class="lyr-num">5</span><span class="lyr-name">Session</span></li>
+            <li class="layer osi" data-group="transport"><span class="lyr-num">4</span><span class="lyr-name">Transport</span></li>
+            <li class="layer osi" data-group="internet"><span class="lyr-num">3</span><span class="lyr-name">Réseau</span></li>
+            <li class="layer osi" data-group="acces"><span class="lyr-num">2</span><span class="lyr-name">Liaison de données</span></li>
+            <li class="layer osi" data-group="acces"><span class="lyr-num">1</span><span class="lyr-name">Physique</span></li>
+          </ol>
+
+          <div class="osi-links" aria-hidden="true">
+            <svg viewBox="0 0 120 700" preserveAspectRatio="none">
+              <path d="M0 50H120" data-group="application"/>
+              <path d="M0 150H120" data-group="application"/>
+              <path d="M0 250H120" data-group="application"/>
+              <path d="M0 350H120" data-group="transport"/>
+              <path d="M0 450H120" data-group="internet"/>
+              <path d="M0 550H120" data-group="acces"/>
+              <path d="M0 650H120" data-group="acces"/>
+            </svg>
+          </div>
+
+          <ol class="tcp-col" aria-label="Modèle TCP/IP, 4 couches">
+            <li class="layer tcp tcp-app" data-group="application"><span class="lyr-name">Application</span><span class="lyr-src">OSI 5 → 7</span></li>
+            <li class="layer tcp tcp-transport" data-group="transport"><span class="lyr-name">Transport</span><span class="lyr-src">OSI 4</span></li>
+            <li class="layer tcp tcp-internet" data-group="internet"><span class="lyr-name">Internet</span><span class="lyr-src">OSI 3</span></li>
+            <li class="layer tcp tcp-acces" data-group="acces"><span class="lyr-name">Accès réseau</span><span class="lyr-src">OSI 1 → 2</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 03 · STAGE ===================== -->
+  <section class="section" id="stage">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="section-num"><span>03</span> Projet phare</p>
+        <h2>Stage à l'I2BC — migration de parc et infrastructure</h2>
+        <p class="section-lead">
+          Un mois pour migrer des postes Windows 10 vers Windows 11 et poser, derrière,
+          une infrastructure complète : routage, domaine Active Directory et services associés.
+        </p>
+      </header>
+
+      <dl class="facts" data-reveal>
+        <div><dt>Structure</dt><dd>I2BC — Gif-sur-Yvette</dd></div>
+        <div><dt>Période</dt><dd>26 mai → 26 juin 2026</dd></div>
+        <div><dt>Tuteur</dt><dd>Mathieu Thevenot</dd></div>
+        <div><dt>Objectif</dt><dd>Migration W10 → W11 &amp; infrastructure</dd></div>
+      </dl>
+
+      <!-- Schéma d'architecture — reconstruction schématique, voir commentaire ci-dessous -->
+      <figure class="arch" data-reveal>
+        <figcaption class="arch-cap">
+          <span class="arch-cap-label">Architecture cible</span>
+          <span class="arch-cap-note">Schéma de principe — remplacez les libellés par vos vrais sous-réseaux et noms d'hôtes.</span>
+        </figcaption>
+
+        <div class="arch-canvas">
+          <svg viewBox="0 0 900 430" role="img" aria-label="Schéma d'architecture réseau : un routeur relie un segment serveurs virtualisé et un segment postes de travail.">
+            <defs>
+              <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+                <path d="M0 0L8 4L0 8z" fill="currentColor"/>
+              </marker>
+            </defs>
+
+            <!-- Liaison WAN -->
+            <g class="arch-link">
+              <path d="M90 70H300" marker-end="url(#arrow)"/>
+              <text x="195" y="58" class="arch-lbl-wan">Lien opérateur</text>
+            </g>
+
+            <!-- Routeur -->
+            <g class="arch-node arch-node-router">
+              <rect x="300" y="44" width="150" height="52" rx="8"/>
+              <text x="375" y="68" class="arch-title">Routeur</text>
+              <text x="375" y="84" class="arch-sub">Routage statique</text>
+            </g>
+
+            <!-- Descendance -->
+            <g class="arch-link">
+              <path d="M375 96V186" marker-end="url(#arrow)"/>
+              <text x="386" y="145" class="arch-lbl">trunk</text>
+            </g>
+
+            <!-- Switch -->
+            <g class="arch-node arch-node-switch">
+              <rect x="290" y="186" width="170" height="52" rx="8"/>
+              <text x="375" y="210" class="arch-title">Switch</text>
+              <text x="375" y="226" class="arch-sub">Segmentation en sous-réseaux</text>
+            </g>
+
+            <!-- Branche serveurs -->
+            <g class="arch-link">
+              <path d="M320 238V300H230V330" marker-end="url(#arrow)"/>
+            </g>
+            <g class="arch-node arch-node-srv">
+              <rect x="120" y="330" width="220" height="76" rx="8"/>
+              <text x="230" y="356" class="arch-title">Hyperviseur VMware</text>
+              <text x="230" y="374" class="arch-sub">Domaine Active Directory</text>
+              <text x="230" y="392" class="arch-sub">AD · DNS · DHCP · GPO</text>
+            </g>
+
+            <!-- Branche postes -->
+            <g class="arch-link">
+              <path d="M430 238V300H600V330" marker-end="url(#arrow)"/>
+            </g>
+            <g class="arch-node arch-node-client">
+              <rect x="490" y="330" width="220" height="76" rx="8"/>
+              <text x="600" y="356" class="arch-title">Postes de travail</text>
+              <text x="600" y="374" class="arch-sub">Windows 10 → Windows 11</text>
+              <text x="600" y="392" class="arch-sub">Rejoints au domaine</text>
+            </g>
+
+            <!-- Bandeau sous-réseaux -->
+            <g class="arch-bands">
+              <rect x="120" y="300" width="220" height="20" rx="3"/>
+              <text x="230" y="314">Segment serveurs</text>
+              <rect x="490" y="300" width="220" height="20" rx="3"/>
+              <text x="600" y="314">Segment postes</text>
+            </g>
+          </svg>
+        </div>
+      </figure>
+
+      <div class="missions">
+        <article class="mission" data-reveal>
+          <p class="mission-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+              <circle cx="12" cy="12" r="2.4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M6.2 6.2l2.1 2.1M15.7 15.7l2.1 2.1M17.8 6.2l-2.1 2.1M8.3 15.7l-2.1 2.1"/>
+            </svg>
+          </p>
+          <h3>Réseau</h3>
+          <ul>
+            <li>Configuration du routeur et de ses interfaces</li>
+            <li>Définition du plan d'adressage et découpage en sous-réseaux</li>
+            <li>Mise en place du routage statique entre les segments</li>
+          </ul>
+        </article>
+
+        <article class="mission" data-reveal style="--i:1">
+          <p class="mission-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 7.5h.01M7 16.5h.01"/>
+            </svg>
+          </p>
+          <h3>Virtualisation</h3>
+          <ul>
+            <li>Installation de l'hyperviseur VMware</li>
+            <li>Création et configuration des machines virtuelles</li>
+            <li>Rattachement des VM au réseau virtuel et aux bons segments</li>
+          </ul>
+        </article>
+
+        <article class="mission" data-reveal style="--i:2">
+          <p class="mission-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3l8 4v6c0 4.2-3.2 7.2-8 8-4.8-.8-8-3.8-8-8V7z"/><path d="M9.2 12.2l2 2 3.6-4"/>
+            </svg>
+          </p>
+          <h3>Services Windows</h3>
+          <ul>
+            <li>Promotion d'un contrôleur de domaine Active Directory</li>
+            <li>Structuration des OU : comptes, groupes, serveurs, postes</li>
+            <li>Déploiement des rôles DHCP, DNS et des GPO</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="stage-outcome" data-reveal>
+        <div class="outcome-main">
+          <h3 class="block-title">Résultat</h3>
+          <p>
+            Une infrastructure autonome : les postes migrés vers Windows 11 rejoignent le domaine,
+            récupèrent leur adressage automatiquement et appliquent les stratégies de groupe définies.
+            L'ensemble a été monté et testé étape par étape, ce qui a rendu les pannes isolables
+            plutôt que subies.
+          </p>
+        </div>
+        <div class="outcome-side">
+          <div class="adcard" aria-hidden="true">
+            <p class="adcard-bar">Arborescence Active Directory <span>exemple</span></p>
+            <ul class="ad-tree">
+              <li class="lvl0">domaine.local</li>
+              <li class="lvl1">├── Comptes</li>
+              <li class="lvl2">│   ├── Utilisateurs</li>
+              <li class="lvl1">├── Groupes</li>
+              <li class="lvl2">│   ├── Accès</li>
+              <li class="lvl2">│   └── Sécurité</li>
+              <li class="lvl1">├── Serveurs</li>
+              <li class="lvl1">└── Postes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 04 · HOME LAB ===================== -->
+  <section class="section section-alt" id="labo">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="section-num"><span>04</span> Home lab</p>
+        <h2>Un labo personnel, parce qu'on n'apprend pas sans casser</h2>
+        <p class="section-lead">
+          Toute la partie pratique du BTS se poursuit chez moi : un environnement virtualisé
+          où je monte, je casse et je remonte des configurations, sans risque et sans contrainte d'horaire.
+        </p>
+      </header>
+
+      <div class="lab-grid">
+        <div class="lab-rack" data-reveal>
+          <div class="rack" role="img" aria-label="Baie de serveurs virtuelle : quatre systèmes empilés — Proxmox, Windows Server, Linux et VirtualBox.">
+            <div class="rack-slot">
+              <span class="rack-led" aria-hidden="true"></span>
+              <span class="rack-name">Proxmox VE</span>
+              <span class="rack-role">Hyperviseur</span>
+            </div>
+            <div class="rack-slot">
+              <span class="rack-led" aria-hidden="true"></span>
+              <span class="rack-name">Windows Server</span>
+              <span class="rack-role">Domaine &amp; services</span>
+            </div>
+            <div class="rack-slot">
+              <span class="rack-led" aria-hidden="true"></span>
+              <span class="rack-name">Linux</span>
+              <span class="rack-role">Serveurs &amp; réseau</span>
+            </div>
+            <div class="rack-slot">
+              <span class="rack-led" aria-hidden="true"></span>
+              <span class="rack-name">VirtualBox</span>
+              <span class="rack-role">Bac à sable</span>
+            </div>
+          </div>
+          <p class="rack-note">
+            VirtualBox sert de brouillon rapide. Proxmox prend le relais dès qu'il s'agit
+            de faire tourner plusieurs machines en même temps de façon crédible.
+          </p>
+        </div>
+
+        <div class="lab-detail">
+          <div class="lab-card" data-reveal>
+            <h3 class="block-title">Ce que j'y pratique</h3>
+            <ul class="lab-list">
+              <li><strong>Déploiement de domaine</strong><span>Contrôleurs de domaine, jointures, réplication, unités d'organisation.</span></li>
+              <li><strong>Gestion de parc</strong><span>GPO, scripts de connexion, déploiement de logiciels, restrictions.</span></li>
+              <li><strong>Services réseau</strong><span>DHCP, DNS, plan d'adressage, VLAN et routage inter-segments.</span></li>
+              <li><strong>Supervision</strong><span>Suivi de l'état des machines et des services, journaux d'événements.</span></li>
+              <li><strong>Émulation</strong><span>Reconstruction de systèmes anciens pour comprendre les contraintes bas niveau.</span></li>
+            </ul>
+          </div>
+
+          <div class="lab-card lab-card-accent" data-reveal style="--i:1">
+            <h3 class="block-title">Boucle de travail</h3>
+            <ol class="loop">
+              <li><span class="loop-n">1</span> Déployer une machine neuve</li>
+              <li><span class="loop-n">2</span> Configurer un service</li>
+              <li><span class="loop-n">3</span> Tester avant de continuer</li>
+              <li><span class="loop-n">4</span> Documenter, puis casser pour comprendre</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 05 · VEILLE ===================== -->
+  <section class="section" id="veille">
+    <div class="wrap">
+      <header class="section-head" data-reveal>
+        <p class="section-num"><span>05</span> Veille technologique</p>
+        <h2>Un flux vivant, pas un exposé</h2>
+        <p class="section-lead">
+          Cette page n'est pas un sujet que je présente une fois : c'est l'outil que j'utilise
+          réellement pour rester à jour. Les articles ci-dessous sont récupérés en direct depuis
+          les sources que je suis, classées par thème.
+        </p>
+      </header>
+
+      <div class="veille-status" data-reveal>
+        <div class="vs-item">
+          <span class="vs-dot" id="vsDot" aria-hidden="true"></span>
+          <span class="vs-label">État des sources</span>
+          <span class="vs-value" id="vsHealth">chargement…</span>
+        </div>
+        <div class="vs-item">
+          <span class="vs-label">Articles chargés</span>
+          <span class="vs-value" id="vsCount">—</span>
+        </div>
+        <div class="vs-item">
+          <span class="vs-label">Dernière actualisation</span>
+          <span class="vs-value" id="vsUpdated">—</span>
+        </div>
+        <button class="btn btn-mini" id="vsRefresh" type="button">
+          <svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10a6 6 0 1 1-1.9-4.4M16 3.6V7h-3.4"/></svg>
+          Actualiser
+        </button>
+      </div>
+
+      <div class="veille-controls" data-reveal>
+        <div class="filters" id="veilleFilters" role="group" aria-label="Filtrer par thème">
+          <button class="chip-filter is-active" data-filter="all" type="button">Tout</button>
+          <button class="chip-filter" data-filter="cyber" type="button">Cybersécurité</button>
+          <button class="chip-filter" data-filter="reseau" type="button">Réseau</button>
+          <button class="chip-filter" data-filter="systeme" type="button">Systèmes</button>
+          <button class="chip-filter" data-filter="virtu" type="button">Virtualisation</button>
+        </div>
+        <label class="search">
+          <span class="sr-only">Rechercher dans les articles</span>
+          <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="9" r="5.5"/><path d="M13.4 13.4L17 17"/></svg>
+          <input type="search" id="veilleSearch" placeholder="Rechercher un titre, une source…" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="veille-notice" id="veilleNotice" hidden>
+        <p id="veilleNoticeText"></p>
+      </div>
+
+      <ul class="feed" id="veilleFeed" aria-live="polite" aria-busy="true">
+        <!-- Squelettes remplacés par veille.js -->
+        <li class="feed-skel" aria-hidden="true"></li>
+        <li class="feed-skel" aria-hidden="true"></li>
+        <li class="feed-skel" aria-hidden="true"></li>
+        <li class="feed-skel" aria-hidden="true"></li>
+        <li class="feed-skel" aria-hidden="true"></li>
+        <li class="feed-skel" aria-hidden="true"></li>
+      </ul>
+
+      <p class="feed-more-wrap"><button class="btn btn-ghost" id="veilleMore" type="button" hidden>Afficher plus d'articles</button></p>
+
+      <!-- Méthodologie -->
+      <div class="method" data-reveal>
+        <h3 class="method-title">Comment je fais ma veille</h3>
+        <div class="method-grid">
+          <div class="method-step">
+            <p class="method-n">01</p>
+            <h4>Collecter</h4>
+            <p>Je m'abonne aux flux RSS de mes sources plutôt que de visiter chaque site. Un agrégateur centralise tout, dans l'ordre chronologique.</p>
+          </div>
+          <div class="method-step">
+            <p class="method-n">02</p>
+            <h4>Trier</h4>
+            <p>Les thèmes sont séparés : cybersécurité, réseau, systèmes, virtualisation. Un flux par thème reste lisible ; un flux fourre-tout devient illisible en une semaine.</p>
+          </div>
+          <div class="method-step">
+            <p class="method-n">03</p>
+            <h4>Creuser</h4>
+            <p>Un titre ne suffit jamais. Pour les alertes de sécurité, je remonte systématiquement à la source primaire : avis CERT-FR, bulletin de l'éditeur, CVE.</p>
+          </div>
+          <div class="method-step">
+            <p class="method-n">04</p>
+            <h4>Retenir</h4>
+            <p>Ce qui a un impact sur mon labo ou mes projets part dans une note, avec la date et la décision à prendre. Le reste est jeté sans état d'âme.</p>
+          </div>
+        </div>
+        <p class="method-tools">
+          <span class="method-tools-label">Outils</span>
+          Un lecteur de flux RSS (FreshRSS auto-hébergé ou Feedly), les flux officiels
+          des éditeurs et des CERT, et cette page comme point d'entrée.
+        </p>
+      </div>
+
+      <!-- Calendrier des fins de support -->
+      <div class="eol" data-reveal>
+        <div class="eol-head">
+          <div>
+            <h3 class="block-title">Calendrier des fins de support</h3>
+            <p class="eol-help">
+              Le compteur se calcule en direct. Les dates sont à revérifier sur les pages
+              officielles des éditeurs — c'est exactement le genre d'information qui bouge.
+            </p>
+          </div>
+        </div>
+        <ul class="eol-list" id="eolList"></ul>
+        <p class="eol-sources">
+          Sources officielles :
+          <a href="https://learn.microsoft.com/fr-fr/lifecycle/products/" target="_blank" rel="noopener">Microsoft Lifecycle</a>,
+          <a href="https://www.vmware.com/support/lifecycle.html" target="_blank" rel="noopener">Broadcom / VMware</a>,
+          <a href="https://wiki.debian.org/LTS" target="_blank" rel="noopener">Debian LTS</a>,
+          <a href="https://www.php.net/supported-versions.php" target="_blank" rel="noopener">PHP</a>,
+          <a href="https://www.cert.ssi.gouv.fr/" target="_blank" rel="noopener">CERT-FR</a>.
+        </p>
+      </div>
+
+      <!-- Sources -->
+      <div class="sources" data-reveal>
+        <h3 class="block-title">Les sources que je suis</h3>
+        <div class="sources-grid" id="sourcesGrid"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact-inner">
+      <div data-reveal>
+        <p class="section-num"><span>06</span> Contact</p>
+        <h2>Discutons infrastructure.</h2>
+        <p class="contact-lead">
+          Disponible pour un stage, une alternance, ou simplement un échange technique.
+          Je réponds vite, surtout si le sujet touche au réseau ou à la virtualisation.
+        </p>
+      </div>
+
+      <div class="contact-actions" data-reveal style="--i:1">
+        <a class="btn btn-primary btn-lg" href="https://github.com/Lucas_LEMARECHAL" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-ghost btn-lg" href="mailto:contact@example.com">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+          Écrire un e-mail
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-brand">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="26" height="26">
+          <circle cx="10" cy="10" r="2.6" fill="currentColor"/>
+          <circle cx="22" cy="10" r="2.6" fill="currentColor" opacity=".55"/>
+          <circle cx="16" cy="22" r="2.6" fill="currentColor"/>
+          <path d="M10 10h12M10 10l6 12M22 10l-6 12" stroke="currentColor" stroke-width="1.3" opacity=".5" fill="none"/>
+        </svg>
+      </span>
+      Lucas Lemarechal — Portfolio BTS SIO SISR
+    </p>
+    <p class="footer-note">
+      Site statique écrit à la main en HTML, CSS et JavaScript. Aucun framework, aucun traqueur.
+    </p>
+    <p class="footer-meta">
+      <span>© <span id="year">2026</span> Lucas Lemarechal</span>
+      <span class="footer-sep" aria-hidden="true">·</span>
+      <a href="#accueil">Retour en haut</a>
+    </p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/veille.js" defer></script>
+</body>
+</html>
